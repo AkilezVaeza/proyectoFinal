@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.imagen{
+    width: 500px;
+    border-radius: 50px;
+}
+
+.tarjeta {
+    width: 250px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    background: $colorverdeprimario;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: default;
+    transition: all 400ms ease;
+}
+.tarjeta:hover {
+    box-shadow: $box-shadow;
+    transform: translateY(-3%);
+}
+
+@mixin PropiedadesFlex ($display,$direccion,$wrap,$justify,$align) {
+    display: $display;
+    flex-direction: $direccion;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.tarjeta1 {
+    @include PropiedadesFlex(flex, row, nowrap, start, center);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    box-shadow: $box-shadow2;
+    cursor: default;
+    transition: all 400ms ease;
+    &:hover {
+        box-shadow: $box-shadow;
+        transform: translateY(-3%);
+    }
+}
+
+
+.btnForm {
+    width: 100px;
+}
+
+.btnPrimario{
+    padding: map-get($btnPrimario , padding);
+    margin: map-get($btnPrimario , margin-top );
+    border: map-get($btnPrimario , border);
+    border-radius: map-get($btnPrimario , radio);
+    color: $colorBlanco;
+    background-color: $colorVerde;
+}
+
+.boton{
+    @extend .btnPrimario;
+}
+
+
+.tarjeta__titulo {
+    color: $colorblanco;
+}
+
+.tarjeta__descripcion {
+    font-size: 15px;
+    margin: 10px;
+    color: $colorblanco;
+}
+
+.tarjeta__img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.boton{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: $colorverde;
+    border: 1px solid $colorverde;
+    border-radius: 4px;
+    transition: all 400ms ease;
+    &:hover{
+        background-color: $colorverde;
+        color: $colorblanco;
+    }
+}
+
+
+.btnformulario{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: $colorblanco;
+    background-color: $colorverde;
+    border: 1px solid $colorverde;
+    border-radius: 4px;
+    transition: all 400ms ease;
+    &:hover{
+        background-color: $colorblanco;
+        color: $colorverde;
+    }
+}
